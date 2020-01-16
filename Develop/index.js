@@ -16,7 +16,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const axios = require('axios').default;
-const pdf = require('html-pdf');
+const pdf = require('puppeteer');
 
 let profileImg;
 let gitHubUserName;
