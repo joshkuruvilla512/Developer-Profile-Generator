@@ -42,9 +42,9 @@ function promptUser() {
       //make a request for info based on username // eg: https://api.github.com/users/cml2377
       //log responses to make sure you're getting what you need and it's coming back correctly
       //login
-      // const login = res.data.login;
+      const login = response.data.login;
       //avatar_url + .png
-
+      const avatar = response.data.avatar_url + .png;
       //html_url
 
       //followers
