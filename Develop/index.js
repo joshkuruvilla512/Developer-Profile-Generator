@@ -64,14 +64,22 @@ function githubInfo(queryURL) {
       const starred = response.data.starred_url;
     })
 }
-axios.get(queryURL) {
 
-}
-
-// const queryStarUrl = "https://api.github.com/users/" + userInput.username + "/starred";
+const queryStarsURL = "https://api.github.com/users/" + userName + "/starred";
 // console.log(queryStarUrl);
 
-//       //make another request for number of starred repos
-//       
+function githubStarsInfo(queryStarsURL) {
+  return axios.get(queryStarsURL)
+    .then(function (responseStars) {
 
-
+      return responseStars.data.length;
+      console.log(responseStars.data.length);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .finally(function () {
+      // always executed
+    });
+};       
