@@ -170,5 +170,25 @@ function generateHTML(data) {
             zoom: .75; 
           } 
          }
-      </style>`
+      </style>
+      </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Hi! My name is ${answers.username}</h1>
+      <p class="lead">I am from ${answers.loc}.</p>
+      <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
+      
+      <div class="links-nav">
+          <span class="nav-link"><a href="https://www.google.com/maps/place/${answers.loc}"><i class="fas fa-location-arrow"></i> ${answers.loc}</a></span>
+          <span class="nav-link"><a href="${answers.github}"><i class="fab fa-github"></i> Github</a></span>
+          <span class="nav-link"><a href="${answers.linkedin}"><i class="fas fa-rss"></i> Blog</a></span>
+        </div>
+      
+    </div>
+  </div> 
+  </body>
+  </html>`;
         }
+        
+module.exports(generateHTML);
