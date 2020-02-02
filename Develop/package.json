@@ -13,7 +13,7 @@
     "axios": "^0.19.1",
     "chromium": "^2.1.1",
     "fs": "0.0.1-security",
-    "inquirer": "^7.0.3",
+    "inquirer": "^7.0.4",
     "puppeteer": "^2.0.0",
     "util": "^0.12.1"
   }

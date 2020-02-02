@@ -1,46 +1,43 @@
-//defining const variables
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 
 const writeFileAsync = util.promisify(fs.writeFile);
-//==============================================
-// Inquirer asks for GHUsername, Color, Location, bio, and linkedIn
-//==============================================
-function start() {
 
-
-  inquirer.prompt(
-    [
-      {
+function promptUser() {
+  return inquirer.prompt([
+    {
       type: "input",
-      message: "What is your Github Username?",
-      name: "username"
-
+      name: "name",
+      message: "What is your name?"
     },
     {
-      type: "list",
-      message: "What is your favorite color?",
-      name: "color",
-      choices: [
-        "green",
-        "blue",
-        "pink",
-        "red"
-      ]
-    }, {
       type: "input",
-      message: "Where are you from?(Name a City and State)",
-      name: "location"
-    }, {
+      name: "location",
+      message: "Where are you from?"
+    },
+    {
       type: "input",
-      message: "What is your LinkedIn URL?",
-      name: "linkedin"
+      name: "hobby",
+      message: "What is your favorite hobby?"
+    },
+    {
+      type: "input",
+      name: "food",
+      message: "What is your favorite food?"
+    },
+    {
+      type: "input",
+      name: "github",
+      message: "Enter your GitHub Username"
+    },
+    {
+      type: "input",
+      name: "linkedin",
+      message: "Enter your LinkedIn URL."
     }
-    ]
-  );
-};
-start();
+  ]);
+}
 
 function generateHTML(answers) {
   return `
@@ -50,7 +47,7 @@ function generateHTML(answers) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <title>09-Node</title>
+  <title>Document</title>
 </head>
 <body>
   <div class="jumbotron jumbotron-fluid">
@@ -68,7 +65,7 @@ function generateHTML(answers) {
 </html>`;
 }
 
-start()
+promptUser()
   .then(function(answers) {
     const html = generateHTML(answers);
 
