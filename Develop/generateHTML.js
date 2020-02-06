@@ -175,14 +175,21 @@ function generateHTML(data) {
   <body>
     <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Hi! My name is ${answers.username}</h1>
-      <p class="lead">I am from ${answers.loc}.</p>
+      <h1 class="display-4">Hi! My name is ${data.username}</h1>
+      <p class="lead">I am from ${data.loc}.</p>
       <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
       
       <div class="links-nav">
-          <span class="nav-link"><a href="https://www.google.com/maps/place/${answers.loc}"><i class="fas fa-location-arrow"></i> ${answers.loc}</a></span>
-          <span class="nav-link"><a href="${answers.github}"><i class="fab fa-github"></i> Github</a></span>
-          <span class="nav-link"><a href="${answers.linkedin}"><i class="fas fa-rss"></i> Blog</a></span>
+          <span class="nav-link"><a href="https://www.google.com/maps/place/${data.loc}"><i class="fas fa-location-arrow"></i> ${data.loc}</a></span>
+          <span class="nav-link"><a href="${data.github}"><i class="fab fa-github"></i> Github</a></span>
+          <span class="nav-link"><a href="${data.linkedin}"><i class="fas fa-rss"></i> Blog</a></span>
+        </div>
+        <div>
+          <ul>
+          <li>Followers: {data.followers}</li>
+          <li>Following: {data.following}</li>
+          <li>Total Repos: {data.total_repos}</li>
+          </ul>
         </div>
       
     </div>

@@ -12,8 +12,11 @@
   "dependencies": {
     "axios": "^0.19.1",
     "chromium": "^2.1.1",
+    "electron": "^8.0.0",
+    "electron-html-to": "^2.6.0",
     "fs": "0.0.1-security",
     "inquirer": "^7.0.4",
+    "open": "^7.0.2",
     "puppeteer": "^2.0.0",
     "util": "^0.12.1"
   }
