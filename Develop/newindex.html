@@ -1,33 +1,4 @@
-const colors = {
-  green: {
-    wrapperBackground: "#51b31d",
-    headerBackground: "#C1C72C",
-    headerColor: "black",
-    photoBorderColor: "black"
-  },
-  blue: {
-    wrapperBackground: "#5F64D3",
-    headerBackground: "#26175A",
-    headerColor: "white",
-    photoBorderColor: "#73448C"
-  },
-  pink: {
-    wrapperBackground: "#cd87df",
-    headerBackground: "#FF8374",
-    headerColor: "white",
-    photoBorderColor: "#FEE24C"
-  },
-  red: {
-    wrapperBackground: "#d14e45",
-    headerBackground: "#870603",
-    headerColor: "white",
-    photoBorderColor: "white"
-  }
-};
-
-function generateHTML(data) {
-  console.log(data);
-  return `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
@@ -53,7 +24,7 @@ function generateHTML(data) {
          height: 100%;
          }
          .wrapper {
-         background-color: ${colors[data.color].wrapperBackground};
+         background-color: #cd87df;
          padding-top: 100px;
          }
          body {
@@ -95,8 +66,8 @@ function generateHTML(data) {
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         background-color: ${colors[data.color].headerBackground};
-         color: ${colors[data.color].headerColor};
+         background-color: #FF8374;
+         color: white;
          padding: 10px;
          width: 95%;
          border-radius: 6px;
@@ -107,7 +78,7 @@ function generateHTML(data) {
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
-         border: 6px solid ${colors[data.color].photoBorderColor};
+         border: 6px solid #FEE24C;
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
          .photo-header h1, .photo-header h2 {
@@ -150,8 +121,8 @@ function generateHTML(data) {
          .card {
            padding: 20px;
            border-radius: 6px;
-           background-color: ${colors[data.color].headerBackground};
-           color: ${colors[data.color].headerColor};
+           background-color: #FF8374;
+           color: white;
            margin: 20px;
          }
          
@@ -176,27 +147,24 @@ function generateHTML(data) {
   <body class ="wrapper">
     <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Hi! My name is ${data.username}</h1>
-      <p class="lead">I am from ${data.location}.</p>
+      <h1 class="display-4">Hi! My name is joshkuruvilla512</h1>
+      <p class="lead">I am from Austin, TX.</p>
       <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
       
       <div class="links-nav">
-          <span class="nav-link"><a href="https://www.google.com/maps/place/${data.location}"><i class="fas fa-location-arrow"></i> ${data.location}</a></span>
-          <span class="nav-link"><a href="${data.github}"><i class="fab fa-github"></i> Github</a></span>
-          <span class="nav-link"><a href="${data.linkedin}"><i class="fas fa-rss"></i> Blog</a></span>
+          <span class="nav-link"><a href="https://www.google.com/maps/place/Austin, TX"><i class="fas fa-location-arrow"></i> Austin, TX</a></span>
+          <span class="nav-link"><a href="https://github.com/joshkuruvilla512"><i class="fab fa-github"></i> Github</a></span>
+          <span class="nav-link"><a href="https://www.linkedin.com/in/joshua-kuruvilla/"><i class="fas fa-rss"></i> Blog</a></span>
         </div>
         <div>
           <ul>
-          <li>Followers: ${data.followers}</li>
-          <li>Following: ${data.following}</li>
-          <li>Total Repos: ${data.total_repos}</li>
+          <li>Followers: 10</li>
+          <li>Following: 12</li>
+          <li>Total Repos: undefined</li>
           </ul>
         </div>
       
     </div>
   </div> 
   </body>
-  </html>`
-}
-
-module.exports = generateHTML;
+  </html>
