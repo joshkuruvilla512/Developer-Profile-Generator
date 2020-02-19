@@ -43,10 +43,13 @@ function start() {
 }
 function getUserInfo(username, color) {
 
-  axios.get("https://api.github.com/users/joshkuruvilla512").then(function (res) {
+  axios.get(`https://api.github.com/users/${username}`).then(function (res) {
     //console.log(res)
     // followerCount = res.data.followers
     var data = {
+      name: res.data.name,
+      bio: res.data.bio,
+      profilePic: (res.data.avatar_url + ".jpeg"),
       followers: res.data.followers,
       following: res.data.following,
       location: res.data.location,
@@ -64,7 +67,7 @@ function getUserInfo(username, color) {
 }
 function getStarsInfo(username, data, color) {
   var starCount
-  axios.get("https://api.github.com/users/joshkuruvilla512/starred").then(function (res) {
+  axios.get(`https://api.github.com/users/${username}/starred`).then(function (res) {
     console.log(res.data[0].stargazers_count)
     var starCount = res.data[0].stargazers_count
     console.log("star count: " + starCount)

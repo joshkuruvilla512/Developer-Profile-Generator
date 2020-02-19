@@ -25,6 +25,7 @@ const colors = {
   }
 };
 
+
 function generateHTML(data) {
   console.log(data);
   return `<!DOCTYPE html>
@@ -35,7 +36,7 @@ function generateHTML(data) {
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
       <link href="https://fonts.googleapis.com/css?family=BioRhyme|Cabin&display=swap" rel="stylesheet">
-      <title>Document</title>
+      <title>${data.username}</title>
       <style>
           @page {
             margin: 0;
@@ -91,7 +92,7 @@ function generateHTML(data) {
          .photo-header {
          position: relative;
          margin: 0 auto;
-         margin-bottom: -50px;
+         margin-bottom: 0px;
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
@@ -176,20 +177,21 @@ function generateHTML(data) {
   <body class ="wrapper">
     <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Hi! My name is ${data.username}</h1>
-      <p class="lead">I am from ${data.location}.</p>
-      <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
+    <div class="photo-header"><img class="photo-header img" src="${data.profilePic}" alt="profile-img">
+      <br><h1 class="display-4">Hi!<br> My name is ${data.name}</h1>
+      <p class="lead"></p>
+      <h3><span class="badge badge-secondary">${data.bio}</span></h3>
       
       <div class="links-nav">
           <span class="nav-link"><a href="https://www.google.com/maps/place/${data.location}"><i class="fas fa-location-arrow"></i> ${data.location}</a></span>
           <span class="nav-link"><a href="${data.github}"><i class="fab fa-github"></i> Github</a></span>
           <span class="nav-link"><a href="${data.linkedin}"><i class="fas fa-rss"></i> Blog</a></span>
         </div>
-        <div>
+        <div> 
           <ul>
           <li>Followers: ${data.followers}</li>
           <li>Following: ${data.following}</li>
-          <li>Total Repos: ${data.total_repos}</li>
+          <li>Total Repos: ${data.publicRepos}</li>
           </ul>
         </div>
       
